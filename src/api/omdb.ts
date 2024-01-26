@@ -16,7 +16,7 @@ export async function getDetailMovie(id: string) {
     const response = await axios.get(
       `http://www.omdbapi.com/?apikey=d572c55e&i=${id}`
     );
-    return response.data;
+    return response.data.Search;
   } catch (error) {
     console.error(error);
   }
