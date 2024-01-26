@@ -1,12 +1,16 @@
-import { Box, Button, Flex, Heading, Image, Spacer } from "@chakra-ui/react";
-import { Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  Image,
+  Spacer,
+} from "@chakra-ui/react";
 import { MdHome } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-  /* TODO: Fix navigation */
-  /* const navigate = useNavigate(); */
-
   return (
     <Box className="header-root">
       <Flex minWidth="max-content" alignItems="center" gap="2" bg={"#F80"}>
@@ -26,16 +30,11 @@ export const Header = () => {
         <Spacer />
 
         <Box p="2">
-          <Button
-            /* onClick={() => {
-              navigate("/");
-            }} */
-            leftIcon={<Icon as={MdHome} />}
-            bg={"#500"}
-            color={"#F80"}
-          >
-            Home
-          </Button>
+          <Link to="/">
+            <Button leftIcon={<Icon as={MdHome} />} bg={"#500"} color={"#F80"}>
+              Home
+            </Button>
+          </Link>
         </Box>
       </Flex>
     </Box>
