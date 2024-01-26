@@ -29,7 +29,7 @@ export const Header = () => {
 
         <Spacer />
 
-        <Box p="2">
+        <Box paddingRight="4">
           <Link to="/">
             <Button leftIcon={<Icon as={MdHome} />} bg={"#500"} color={"#F80"}>
               Home
