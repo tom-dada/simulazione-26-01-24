@@ -1,17 +1,8 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box } from "@chakra-ui/react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <ChakraProvider>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-    </ChakraProvider>
-  );
+  return <Box></Box>;
 }
 
 export default App;
