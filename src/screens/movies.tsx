@@ -1,16 +1,19 @@
 import { Box } from "@chakra-ui/react";
 import { MovieList } from "../components/MovieList/MovieList";
 import { getMovies } from "../api/omdb";
+import { useLoaderData } from "react-router-dom";
+import { MovieType } from "../types/types";
 
-async function movieLoader() {
-  const movies = getMovies();
-  return { movies };
+export const movieLoader = async () => {
+  const movies = await getMovies();
+  return movies;
 }
 
 export default function Movies() {
+  const moviesFromApi = useLoaderData() as MovieType[];
   return (
     <Box>
-      <MovieList />
+      <MovieList movies={moviesFromApi} />
     </Box>
   );
 }
