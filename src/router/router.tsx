@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { LoaderFunctionArgs, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../screens/error-page";
+import MovieDetails, { movieDetailsLoader } from "../screens/movie-details";
+import Movies, { movieLoader } from "../screens/movies";
 import Root from "../screens/root/root";
-import Movies from "../screens/movies";
-import { movieLoader } from "../screens/movies";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +15,10 @@ export const router = createBrowserRouter([
         path: "/movies",
         element: <Movies />,
       },
+      {
+        path: "/movie/:movieId",
+        element: <MovieDetails />,
+      }
     ],
   },
 ]);
