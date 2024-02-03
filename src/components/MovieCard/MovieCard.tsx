@@ -18,7 +18,7 @@ interface MovieCardProps {
 export const MovieCard = ({ movieDetails }: MovieCardProps) => {
   return (
     <Box>
-      <Link to={`/movie/${movieDetails.imdbID}`}>
+      <Link to={`/movies/${movieDetails.imdbID}`}>
         <Card maxW="sm">
           <CardBody>
             <Image src={movieDetails.Poster} borderRadius="lg" />
