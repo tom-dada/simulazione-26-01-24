@@ -15,10 +15,13 @@ export const router = createBrowserRouter([
         path: "/movies",
         element: <Movies />,
       },
-      {
-        path: "/movie/:movieId",
-        element: <MovieDetails />,
-      }
     ],
+  },
+  {
+    path: "/movies/:id",
+    element: <MovieDetails />,
+    errorElement: <ErrorPage />,
+    // Pretty ugly, but it works...
+    loader: (args: LoaderFunctionArgs<any>) => movieDetailsLoader({ id: args.params?.id ?? '' }),
   },
 ]);
